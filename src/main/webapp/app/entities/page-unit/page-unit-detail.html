@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Page Unit</span> {{vm.pageUnit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Unit Name</span></dt>
+        <dd>
+            <span>{{vm.pageUnit.unitName}}</span>
+        </dd>
+        <dt><span>Unit Memo</span></dt>
+        <dd>
+            <span>{{vm.pageUnit.unitMemo}}</span>
+        </dd>
+        <dt><span>Unit Title</span></dt>
+        <dd>
+            <span>{{vm.pageUnit.unitTitle}}</span>
+        </dd>
+        <dt><span>Unit Sort</span></dt>
+        <dd>
+            <span>{{vm.pageUnit.unitSort}}</span>
+        </dd>
+        <dt><span>Page</span></dt>
+        <dd>
+            <a ui-sref="page-detail({id:vm.pageUnit.page.id})">{{vm.pageUnit.page.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="page-unit-detail.edit({id:vm.pageUnit.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

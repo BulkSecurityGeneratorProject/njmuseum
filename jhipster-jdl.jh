@@ -1,0 +1,32 @@
+entity Page{
+	pageName String,
+	pageMemo String,
+	pageImage String,
+	pageSort Integer
+}
+entity PageUnit {
+	unitName String,
+    unitMemo String,
+	unitTitle String,
+	unitSort Integer
+}
+
+entity UnitContent {
+	contentName String,
+    contentMemo String,
+    contentSort Integer
+}
+
+entity ContentInfo {
+	infoTitle String,
+    infoCover String,
+    infoText String,
+    infoImage String,
+    infoSort Integer
+}
+
+relationship OneToMany {
+	Page{units} to PageUnit,
+	PageUnit{contents} to UnitContent,
+	UnitContent{infos} to ContentInfo
+}

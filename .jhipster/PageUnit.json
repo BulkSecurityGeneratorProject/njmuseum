@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "page",
+            "otherEntityName": "page",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "contents",
+            "otherEntityName": "unitContent",
+            "otherEntityRelationshipName": "pageUnit"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "unitName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitMemo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitSort",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170812131631",
+    "entityTableName": "page_unit",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

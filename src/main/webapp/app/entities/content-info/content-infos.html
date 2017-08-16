@@ -1,0 +1,68 @@
+<div>
+    <h2>Content Infos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="content-info.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Content Info
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Info Title</span></th>
+                    <th><span>Info Cover</span></th>
+                    <th><span>Info Text</span></th>
+                    <th><span>Info Image</span></th>
+                    <th><span>Info Sort</span></th>
+                    <th><span>Unit Content</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contentInfo in vm.contentInfos track by contentInfo.id">
+                    <td><a ui-sref="content-info-detail({id:contentInfo.id})">{{contentInfo.id}}</a></td>
+                    <td>{{contentInfo.infoTitle}}</td>
+                    <td>{{contentInfo.infoCover}}</td>
+                    <td>{{contentInfo.infoText}}</td>
+                    <td>{{contentInfo.infoImage}}</td>
+                    <td>{{contentInfo.infoSort}}</td>
+                    <td>
+                        <a ui-sref="unit-content-detail({id:contentInfo.unitContent.id})">{{contentInfo.unitContent.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="content-info-detail({id:contentInfo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="content-info.edit({id:contentInfo.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="content-info.delete({id:contentInfo.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

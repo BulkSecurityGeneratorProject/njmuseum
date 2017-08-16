@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myContentInfoLabel">Create or edit a Content Info</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.contentInfo.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.contentInfo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoTitle">Info Title</label>
+            <input type="text" class="form-control" name="infoTitle" id="field_infoTitle"
+                    ng-model="vm.contentInfo.infoTitle"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoCover">Info Cover</label>
+            <input type="text" class="form-control" name="infoCover" id="field_infoCover"
+                    ng-model="vm.contentInfo.infoCover"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoText">Info Text</label>
+            <input type="text" class="form-control" name="infoText" id="field_infoText"
+                    ng-model="vm.contentInfo.infoText"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoImage">Info Image</label>
+            <input type="text" class="form-control" name="infoImage" id="field_infoImage"
+                    ng-model="vm.contentInfo.infoImage"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoSort">Info Sort</label>
+            <input type="number" class="form-control" name="infoSort" id="field_infoSort"
+                    ng-model="vm.contentInfo.infoSort"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_unitContent">Unit Content</label>
+            <select class="form-control" id="field_unitContent" name="unitContent" ng-model="vm.contentInfo.unitContent" ng-options="unitContent as unitContent.id for unitContent in vm.unitcontents track by unitContent.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

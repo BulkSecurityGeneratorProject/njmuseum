@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "unitContent",
+            "otherEntityName": "unitContent",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "infoTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoCover",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoImage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoSort",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170812131633",
+    "entityTableName": "content_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

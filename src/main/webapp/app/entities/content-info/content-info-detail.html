@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span>Content Info</span> {{vm.contentInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Info Title</span></dt>
+        <dd>
+            <span>{{vm.contentInfo.infoTitle}}</span>
+        </dd>
+        <dt><span>Info Cover</span></dt>
+        <dd>
+            <span>{{vm.contentInfo.infoCover}}</span>
+        </dd>
+        <dt><span>Info Text</span></dt>
+        <dd>
+            <span>{{vm.contentInfo.infoText}}</span>
+        </dd>
+        <dt><span>Info Image</span></dt>
+        <dd>
+            <span>{{vm.contentInfo.infoImage}}</span>
+        </dd>
+        <dt><span>Info Sort</span></dt>
+        <dd>
+            <span>{{vm.contentInfo.infoSort}}</span>
+        </dd>
+        <dt><span>Unit Content</span></dt>
+        <dd>
+            <a ui-sref="unit-content-detail({id:vm.contentInfo.unitContent.id})">{{vm.contentInfo.unitContent.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="content-info-detail.edit({id:vm.contentInfo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>
