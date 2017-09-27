@@ -33,6 +33,15 @@ public class ContentInfo implements Serializable {
     @Column(name = "info_sort")
     private Integer infoSort;
 
+    @Column(name = "info_sub_title")
+    private String infoSubTitle;
+
+    @Column(name = "info_item_desc")
+    private String infoItemDesc;
+
+    @Column(name = "info_field_1")
+    private String infoField1;
+
     @ManyToOne
     private UnitContent unitContent;
 
@@ -109,6 +118,45 @@ public class ContentInfo implements Serializable {
         this.infoSort = infoSort;
     }
 
+    public String getInfoSubTitle() {
+        return infoSubTitle;
+    }
+
+    public ContentInfo infoSubTitle(String infoSubTitle) {
+        this.infoSubTitle = infoSubTitle;
+        return this;
+    }
+
+    public void setInfoSubTitle(String infoSubTitle) {
+        this.infoSubTitle = infoSubTitle;
+    }
+
+    public String getInfoItemDesc() {
+        return infoItemDesc;
+    }
+
+    public ContentInfo infoItemDesc(String infoItemDesc) {
+        this.infoItemDesc = infoItemDesc;
+        return this;
+    }
+
+    public void setInfoItemDesc(String infoItemDesc) {
+        this.infoItemDesc = infoItemDesc;
+    }
+
+    public String getInfoField1() {
+        return infoField1;
+    }
+
+    public ContentInfo infoField1(String infoField1) {
+        this.infoField1 = infoField1;
+        return this;
+    }
+
+    public void setInfoField1(String infoField1) {
+        this.infoField1 = infoField1;
+    }
+
     public UnitContent getUnitContent() {
         return unitContent;
     }
@@ -151,6 +199,9 @@ public class ContentInfo implements Serializable {
             ", infoText='" + getInfoText() + "'" +
             ", infoImage='" + getInfoImage() + "'" +
             ", infoSort='" + getInfoSort() + "'" +
+            ", infoSubTitle='" + getInfoSubTitle() + "'" +
+            ", infoItemDesc='" + getInfoItemDesc() + "'" +
+            ", infoField1='" + getInfoField1() + "'" +
             "}";
     }
 }

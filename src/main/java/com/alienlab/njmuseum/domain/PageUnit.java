@@ -37,7 +37,7 @@ public class PageUnit implements Serializable {
     private Page page;
 
     @OneToMany(mappedBy = "pageUnit")
-    @JsonIgnore
+
     private Set<UnitContent> contents = new HashSet<>();
 
     public Long getId() {

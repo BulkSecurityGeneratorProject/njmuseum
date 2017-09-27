@@ -24,6 +24,9 @@
                     <th><span>Info Text</span></th>
                     <th><span>Info Image</span></th>
                     <th><span>Info Sort</span></th>
+                    <th><span>Info Sub Title</span></th>
+                    <th><span>Info Item Desc</span></th>
+                    <th><span>Info Field 1</span></th>
                     <th><span>Unit Content</span></th>
                     <th></th>
                 </tr>
@@ -36,8 +39,11 @@
                     <td>{{contentInfo.infoText}}</td>
                     <td>{{contentInfo.infoImage}}</td>
                     <td>{{contentInfo.infoSort}}</td>
+                    <td>{{contentInfo.infoSubTitle}}</td>
+                    <td>{{contentInfo.infoItemDesc}}</td>
+                    <td>{{contentInfo.infoField1}}</td>
                     <td>
-                        <a ui-sref="unit-content-detail({id:contentInfo.unitContent.id})">{{contentInfo.unitContent.id}}</a>
+                        <a ui-sref="unit-content-detail({id:contentInfo.unitContent.id})">{{contentInfo.unitContent.contentName}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

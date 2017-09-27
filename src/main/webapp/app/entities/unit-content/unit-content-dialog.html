@@ -33,8 +33,8 @@
         </div>
 
         <div class="form-group">
-            <label for="field_pageUnit">Page Unit</label>
-            <select class="form-control" id="field_pageUnit" name="pageUnit" ng-model="vm.unitContent.pageUnit" ng-options="pageUnit as pageUnit.id for pageUnit in vm.pageunits track by pageUnit.id">
+            <label for="field_pageUnit">关联单元</label>
+            <select class="form-control" id="field_pageUnit" name="pageUnit" ng-model="vm.unitContent.pageUnit" ng-options="pageUnit as pageUnit.unitName for pageUnit in vm.pageunits track by pageUnit.id">
                 <option value=""></option>
             </select>
         </div>

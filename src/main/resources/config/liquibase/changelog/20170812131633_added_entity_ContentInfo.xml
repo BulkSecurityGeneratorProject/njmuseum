@@ -42,6 +42,18 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="info_sub_title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="info_item_desc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="info_field_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <column name="unit_content_id" type="bigint">
                 <constraints nullable="true" />
             </column>

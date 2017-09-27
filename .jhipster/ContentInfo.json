@@ -28,11 +28,23 @@
         {
             "fieldName": "infoSort",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "infoSubTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoItemDesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoField1",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20170812131633",
-    "entityTableName": "content_info",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "content_info",
+    "pagination": "no"
 }

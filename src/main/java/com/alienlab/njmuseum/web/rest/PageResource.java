@@ -1,21 +1,31 @@
 package com.alienlab.njmuseum.web.rest;
 
+import com.alienlab.njmuseum.domain.ContentInfo;
+import com.alienlab.njmuseum.domain.PageUnit;
+import com.alienlab.njmuseum.domain.UnitContent;
+import com.alienlab.njmuseum.repository.ContentInfoRepository;
+import com.alienlab.njmuseum.repository.PageUnitRepository;
+import com.alienlab.njmuseum.repository.UnitContentRepository;
 import com.codahale.metrics.annotation.Timed;
 import com.alienlab.njmuseum.domain.Page;
 
 import com.alienlab.njmuseum.repository.PageRepository;
 import com.alienlab.njmuseum.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing Page.
@@ -27,8 +37,14 @@ public class PageResource {
     private final Logger log = LoggerFactory.getLogger(PageResource.class);
 
     private static final String ENTITY_NAME = "page";
-        
+
     private final PageRepository pageRepository;
+    @Autowired
+    PageUnitRepository pageUnitRepository;
+    @Autowired
+    UnitContentRepository unitContentRepository;
+    @Autowired
+    ContentInfoRepository contentInfoRepository;
 
     public PageResource(PageRepository pageRepository) {
         this.pageRepository = pageRepository;
@@ -115,6 +131,25 @@ public class PageResource {
         log.debug("REST request to delete Page : {}", id);
         pageRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
+    }
+
+    @GetMapping("/pages/json")
+    public ResponseEntity getJson(){
+        List<Page> pages=pageRepository.findAll();
+        for (Page page : pages) {
+            Set<PageUnit> units=pageUnitRepository.findByPage(page);
+            for (PageUnit unit : units) {
+                Set<UnitContent> contents=unitContentRepository.findByPageUnit(unit);
+                for (UnitContent content : contents) {
+                    Set<ContentInfo> infos=contentInfoRepository.findByUnitContent(content);
+                    content.setInfos(infos);
+                }
+                unit.setContents(contents);
+            }
+            page.setUnits(units);
+        }
+
+        return ResponseEntity.ok(pages);
     }
 
 }

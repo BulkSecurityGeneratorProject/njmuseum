@@ -1,9 +1,13 @@
 package com.alienlab.njmuseum.repository;
 
 import com.alienlab.njmuseum.domain.ContentInfo;
+import com.alienlab.njmuseum.domain.UnitContent;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
+
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -12,5 +16,5 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface ContentInfoRepository extends JpaRepository<ContentInfo,Long> {
-
+    Set<ContentInfo> findByUnitContent(UnitContent content);
 }

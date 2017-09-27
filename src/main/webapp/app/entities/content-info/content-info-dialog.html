@@ -43,10 +43,28 @@
                     ng-model="vm.contentInfo.infoSort"
                     />
         </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoSubTitle">Info Sub Title</label>
+            <input type="text" class="form-control" name="infoSubTitle" id="field_infoSubTitle"
+                    ng-model="vm.contentInfo.infoSubTitle"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoItemDesc">Info Item Desc</label>
+            <input type="text" class="form-control" name="infoItemDesc" id="field_infoItemDesc"
+                    ng-model="vm.contentInfo.infoItemDesc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_infoField1">Info Field 1</label>
+            <input type="text" class="form-control" name="infoField1" id="field_infoField1"
+                    ng-model="vm.contentInfo.infoField1"
+                    />
+        </div>
 
         <div class="form-group">
             <label for="field_unitContent">Unit Content</label>
-            <select class="form-control" id="field_unitContent" name="unitContent" ng-model="vm.contentInfo.unitContent" ng-options="unitContent as unitContent.id for unitContent in vm.unitcontents track by unitContent.id">
+            <select class="form-control" id="field_unitContent" name="unitContent" ng-model="vm.contentInfo.unitContent" ng-options="unitContent as unitContent.contentName for unitContent in vm.unitcontents track by unitContent.id">
                 <option value=""></option>
             </select>
         </div>

@@ -100,6 +100,9 @@
                                 infoText: null,
                                 infoImage: null,
                                 infoSort: null,
+                                infoSubTitle: null,
+                                infoItemDesc: null,
+                                infoField1: null,
                                 id: null
                             };
                         }
